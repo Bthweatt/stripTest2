@@ -11,6 +11,8 @@ app.use(express.static('public'));
 // Define the route for creating a payment intent
 app.use('/create-payment-intent', createPaymentIntent);
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+const PORT = process.env.PORT || 3000; // Use Heroku's port or a default port
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
